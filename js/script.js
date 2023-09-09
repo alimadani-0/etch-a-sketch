@@ -2,6 +2,11 @@ let gridSize = 0;
 let squareColor = null;
 let darkness = 1.0;
 
+function displayGridSize() {
+    const sizeContainer = document.querySelector('span');
+    sizeContainer.textContent = `${gridSize} X ${gridSize}`
+}
+
 function generateSquareColor() {
     const rgb = [];
     for (let i = 0; i < 3; i++) rgb.push(Math.floor(Math.random() * 255));
@@ -33,6 +38,7 @@ function changeSquareColor(e) {
 
 function createGrid(size = 16) {
     gridSize = size;
+    displayGridSize();
     const DIV_LENGTH = (1 / size) * 100;
     const gridContainer = document.getElementById('grid-container');
     gridContainer.replaceChildren();
