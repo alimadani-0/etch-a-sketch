@@ -1,3 +1,4 @@
+let gridSize = 0;
 let squareColor = null;
 let darkness = 1.0;
 
@@ -31,6 +32,7 @@ function changeSquareColor(e) {
 }
 
 function createGrid(size = 16) {
+    gridSize = size;
     const DIV_LENGTH = (1 / size) * 100;
     const gridContainer = document.getElementById('grid-container');
     gridContainer.replaceChildren();
@@ -66,7 +68,14 @@ function changeGridSize() {
     createGrid(getGridSizeFromUser());
 }
 
+function resetGrid() {
+    createGrid(gridSize);
+}
+
 createGrid();
 
 const changeGridButton = document.getElementById('change-grid');
-changeGridButton.addEventListener('click', changeGridSize)
+changeGridButton.addEventListener('click', changeGridSize);
+
+const resetGridButton = document.getElementById('reset-grid');
+resetGridButton.addEventListener('click', resetGrid);
