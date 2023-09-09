@@ -15,12 +15,23 @@ button {
     padding: 5px 20px;
 }
 
+#middle-section {
+    flex: 0 0 75vh;
+    width: 100vw;
+
+    display: flex;
+}
+
 #grid-container {
     flex: 0 1 75vh;
     width: 75vh;
 
     display: flex;
     flex-direction: column;
+}
+
+.side {
+    flex: 1;
 }
 
 .grid-row {
