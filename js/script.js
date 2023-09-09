@@ -1,3 +1,32 @@
+let squareColor = null;
+let darkness = 1.0;
+
+function generateSquareColor() {
+    const rgb = [];
+    for (let i = 0; i < 3; i++) rgb.push(Math.floor(Math.random() * 255));
+    return rgb;
+}
+
+function updateColorVariables() {
+    if (darkness >= 1.0) {
+        darkness = 0.0;
+        const rgb = generateSquareColor();
+        squareColor = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, 0.0)`;
+    } else {
+        darkness = ((darkness * 10) + 1) / 10;
+        squareColor = squareColor.slice(0, -4)
+            + darkness
+            + ')';
+    };
+
+}
+
+function changeSquareColor(e) {
+    const square = e.target;
+    updateColorVariables();
+    square.style.backgroundColor = squareColor;
+}
+
 function createGrid(size = 16) {
     const DIV_LENGTH = (1 / size) * 100;
     const gridContainer = document.getElementById('grid-container');
@@ -12,6 +41,7 @@ function createGrid(size = 16) {
             const squareDiv = document.createElement('div');
             squareDiv.style.width = `${DIV_LENGTH}%`;
             squareDiv.classList.add('grid-square', 'border', 'white');
+            squareDiv.addEventListener('mouseover', changeSquareColor);
             rowDiv.appendChild(squareDiv);
         };
 
