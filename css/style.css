@@ -22,7 +22,8 @@ button {
     background-color: white;
 }
 
-.font-color {
+.font {
+    font-family: 'Courier New', Courier, monospace;
     color: #007166;
 }
 
