@@ -14,3 +14,20 @@ button {
     padding: 5px 20px;
 }
 
+#grid-container {
+    flex: 0 1 75vh;
+    width: 75vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-row {
+    flex: auto;
+
+    display: flex;
+}
+
+.border {
+    border: 1px dotted rgb(127, 127, 127);
+}
