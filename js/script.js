@@ -10,7 +10,7 @@ function createGrid(size = 16) {
         for (let column = 0; column < size; column++) {
             const squareDiv = document.createElement('div');
             squareDiv.style.width = `${DIV_LENGTH}%`;
-            squareDiv.classList.add('grid-square', 'border');
+            squareDiv.classList.add('grid-square', 'border', 'white');
             rowDiv.appendChild(squareDiv);
         };
 
