@@ -23,8 +23,11 @@ function updateColorVariables() {
 
 function changeSquareColor(e) {
     const square = e.target;
-    updateColorVariables();
-    square.style.backgroundColor = squareColor;
+    if (!square.classList.contains('colored')){
+        square.classList.add('colored');
+        updateColorVariables();
+        square.style.backgroundColor = squareColor;
+    };
 }
 
 function createGrid(size = 16) {
